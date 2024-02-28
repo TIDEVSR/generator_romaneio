@@ -1,35 +1,19 @@
-export const Table = () => {
+import styled from "styled-components"
+
+export const Table = ({ children }) => {    
     return (
-        <table class="table caption-top">
-  <caption>List of users</caption>
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-    );
+        <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome Cliente</th>
+            <th scope="col">Item Cliente</th>
+            <th scope="col">Data Produção</th>
+          </tr>
+        </thead>
+        <tbody>
+          {children}
+        </tbody>
+      </table>
+    )
 }
