@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "jsbarcode": "^3.11.6",
+    "react-jsbarcode": "^0.4.2"
+  }
+}
