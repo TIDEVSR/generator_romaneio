@@ -16,7 +16,7 @@ export const App = () => {
     const findRomaneio = async (ordem) => {
         setLoading(true);
         try {
-            const resp = await Api.get(`http://localhost:8080/romaneio/${ordem}`);
+            const resp = await Api.get(`http://localhost:8080/romaneio/?ordem=${ordem}`);
             console.log(resp)
             setRomaneios(resp.data);
         }
@@ -56,7 +56,7 @@ export const App = () => {
                 </Table>
             )
         }
-
+        
       </div>
     </div>
   );

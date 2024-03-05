@@ -1,0 +1,143 @@
+/* .bloco {
+}
+
+.bloco span {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100%;
+
+    font-size: 36px;
+}
+
+.bloco canvas {
+    height: 100%;
+    width: 100%;
+}
+
+.romaneio {
+    position: absolute; 
+    top: 60px; 
+    left: 750px;
+
+    height: 90px;
+    width: 720px;
+}
+
+.romaneio span {
+    font-size: 42px;
+}
+
+.op_lote {
+    position: absolute; 
+    top: 221px; 
+    left: 100px;
+
+    height: 80px;
+    width: 620px;
+}
+
+.barcode {
+    position: absolute;
+    top: 182px; 
+    left: 780px;
+    height: 140px;
+    width: 690px;
+}
+
+.cliente {
+    position: absolute; 
+    top: 380px; 
+    left: 100px;
+    height: 85px;
+    width: 1340px;
+}
+
+.itemsr {
+    position: absolute; 
+    top: 680px; 
+    left: 100px;
+    height: 85px;
+    width: 1340px;
+}
+
+.item_cliente {
+    position: absolute; 
+    top: 830px; 
+    left: 100px;
+    height: 72px;
+    width: 1340px;
+}
+
+.cidade {
+    position: absolute; 
+    top: 540px; 
+    left: 100px;
+    height: 72px;
+    width: 1340px;
+}
+
+.peso_bruto {
+    position: absolute; 
+    top: 970px; 
+    left: 100px;
+    height: 70px;
+    width: 620px;
+}
+
+.peso_liquido {
+    position: absolute; 
+    top: 970px; 
+    left: 810px;
+    height: 70px;
+    width: 620px;
+}
+
+.peso_tubete {
+    position: absolute; 
+    top: 1100px; 
+    left: 810px;
+    height: 70px;
+    width: 620px;
+}
+
+.quantidade {
+    position: absolute; 
+    top: 1233px; 
+    left: 100px;
+    height: 70px;
+    width: 620px;
+}
+
+.endereco {
+    position: absolute; 
+    top: 1233px; 
+    left: 810px;
+    height: 70px;
+    width: 620px;
+}
+
+.qtd_vol {
+    position: absolute; 
+    top: 1366px; 
+    left: 100px;
+    height: 70px;
+    width: 620px;
+}
+
+.data_prod {
+    position: absolute; 
+    top: 1366px; 
+    left: 810px;
+    height: 70px;
+    width: 620px;
+}
+
+.op_lote2 {
+    position: absolute; 
+    top: 1500px; 
+    left: 100px;
+    height: 70px;
+    width: 620px;
+}
+ */

@@ -1,0 +1,159 @@
+.bloco {
+    font-family: Helvetica, Sans-Serif;
+}
+
+.bloco span {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100%;
+
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.bloco canvas {
+    height: 100%;
+    width: 100%;
+}
+
+.romaneio {
+    position: absolute; 
+    top: 43px; 
+    left: 750px;
+
+    height: 90px;
+    width: 720px;
+}
+
+.romaneio span {
+    font-size: 42px;
+    
+}
+
+.op_lote {
+    position: absolute; 
+    top: 180px; 
+    left: 100px;
+
+    height: 80px;
+    width: 620px;
+}
+
+.barcode {
+    position: absolute;
+    top: 150px; 
+    left: 770px;
+    height: 110px;
+    width: 690px;
+    padding: 0 70px;
+}
+
+.cliente {
+    position: absolute; 
+    top: 305px; 
+    left: 30px;
+    height: 85px;
+    width: 1440px;
+}
+
+.cidade {
+    position: absolute; 
+    top: 452px; 
+    left: 30px;
+    height: 72px;
+    width: 1440px;
+}
+
+.itemsr {
+    position: absolute; 
+    top: 590px; 
+    left: 30px;
+    height: 85px;
+    width: 1440px;
+}
+
+.item_cliente {
+    position: absolute; 
+    top: 730px; 
+    left: 30px;
+    height: 72px;
+    width: 1440px;
+}
+
+
+.peso_bruto {
+    position: absolute; 
+    top: 880px; 
+    left: 30px;
+    height: 70px;
+    width: 710px;
+}
+
+.peso_liquido {
+    position: absolute; 
+    top: 880px; 
+    left: 750px;
+    height: 70px;
+    width: 710px;
+}
+
+.peso_tubete {
+    position: absolute; 
+    top: 1020px; 
+    left: 750px;
+    height: 70px;
+    width: 710px;
+}
+
+.quantidade {
+    position: absolute; 
+    top: 1150px; 
+    left: 30px;
+    height: 70px;
+    width: 710px;
+}
+
+.endereco {
+    position: absolute; 
+    top: 1150px; 
+    left: 750px;
+    height: 70px;
+    width: 710px;
+}
+
+.qtd_vol {
+    position: absolute; 
+    top: 1290px; 
+    left: 30px;
+    height: 70px;
+    width: 710px;
+}
+
+.data_prod {
+    position: absolute; 
+    top: 1290px; 
+    left: 750px;
+    height: 70px;
+    width: 710px;
+}
+
+.op_lote2 {
+    position: absolute; 
+    top: 1432px; 
+    left: 30px;
+    height: 70px;
+    width: 710px;
+}
+
+.barcodegs1 {
+    position: absolute; 
+    top: 1517px; 
+    left: 29px;
+    height: 205px;
+    width: 1445px;
+    border-bottom: 2px solid black;
+    padding: 1px 60px;
+    padding-bottom: 5px;
+}
+
