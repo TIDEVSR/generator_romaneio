@@ -5,7 +5,7 @@ export const Table = ({ children }) => {
         <table class="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">Romaneio</th>
             <th scope="col">Nome Cliente</th>
             <th scope="col">Item Cliente</th>
             <th scope="col">Data Produção</th>
