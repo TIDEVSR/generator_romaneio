@@ -37,6 +37,7 @@ export const BarcodeGS1 = ({ data }) => {
         // item cliente + data_fabricao_validade + lote
         JsBarcode(svg, dados_code_barras, {
             // width: 3,
+            ean128: true,
             fontSize: 24
         });
         svg.classList.add('img-fluid');
