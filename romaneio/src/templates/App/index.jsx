@@ -17,7 +17,6 @@ export const App = () => {
         setLoading(true);
         try {
             const resp = await Api.get(`/romaneio/?ordem=${ordem}`);
-            console.log(resp)
             setRomaneios(resp.data);
         }
         catch(e) {
