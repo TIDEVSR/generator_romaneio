@@ -9,7 +9,7 @@
     height: 100%;
 
     font-size: 36px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .bloco canvas {
@@ -96,6 +96,22 @@
     left: 750px;
     height: 70px;
     width: 710px;
+}
+
+.referencia-cliente {
+    position: absolute; 
+    top: 970px; 
+    left: 30px;
+    height: 115px;
+    width: 710px;
+}
+
+.referencia-cliente p {
+    margin: 0;
+    text-align: center;
+    padding: 0;
+    font-size: 42px;
+    margin-bottom: -35px;
 }
 
 .peso_tubete {

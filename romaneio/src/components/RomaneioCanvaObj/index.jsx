@@ -1,20 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { formatarData } from '../../utils/formataData';
-import image_molde from './img/image_molde_romaneio.png'
+import image_molde from './img/image_molde_romaneio2.png'
 import { Api } from '../../services/api';
 
 import * as PDFLib from 'pdf-lib'
 
 import html2canvas from 'html2canvas';
 
-import './style.css';
-
-import JsBarcode from  'jsbarcode';
-import { BarcodeGS1 } from './BarcodeGS1';
+import { Romaneio } from '../Romaneio';
 
 export const RomaneioCanvaObj = ({ cod_romaneio }) => {
-    const divBarcode = useRef();
-
     const [romaneio, setRomaneio] = useState(null);
 
     const findRomaneio = async () => {
@@ -31,19 +26,6 @@ export const RomaneioCanvaObj = ({ cod_romaneio }) => {
         }
     }
 
-    const createBarcode = () => {
-        if (!divBarcode.current) return;
-        divBarcode.current.innerHTML = '';
-        const svg = document.createElement('canvas');
-        // item cliente + data_fabricao_validade + lote
-        JsBarcode(svg, romaneio.cod_romaneio, {
-            fontSize: 0,
-            height: 35,
-        });
-        svg.classList.add('img-fluid');
-        divBarcode.current.appendChild(svg);
-    }
-
     const createIMG = async () => {
         // html2canvas(document.querySelector(`#romaneio_container_${cod_romaneio}`)).then(canvas => {
         //     canvas.classList.add(`canva_${cod_romaneio}`);
@@ -51,10 +33,20 @@ export const RomaneioCanvaObj = ({ cod_romaneio }) => {
         //     canva = canvas;
         //     document.querySelector(`#romaneio_container_${cod_romaneio}`).style.display = 'none'
         // });
+        document.querySelector(`#romaneio_container_${cod_romaneio}`).style.display = 'block'
+        document.querySelector(`#response-${cod_romaneio}`).innerHTML = '';
+        
+
         const canvas = await html2canvas(document.querySelector(`#romaneio_container_${cod_romaneio}`));
+        const img = document.createElement('img');
+    
+        img.classList.add('img-fluid');
+        img.src = canvas.toDataURL();
 
         canvas.classList.add(`canva_${cod_romaneio}`);
+        canvas.classList.add(`d-none`);
         document.querySelector(`#response-${cod_romaneio}`).appendChild(canvas);
+        document.querySelector(`#response-${cod_romaneio}`).appendChild(img);
         document.querySelector(`#romaneio_container_${cod_romaneio}`).style.display = 'none'
 
         return canvas;
@@ -104,7 +96,6 @@ export const RomaneioCanvaObj = ({ cod_romaneio }) => {
     useEffect(() => {
         findRomaneio();
     }, []);
-   
 
     return (
         <div class="modal fade" id={`staticBackdrop${cod_romaneio}`} data-bs-keyboard="true" tabindex="-1" aria-labelledby={`staticBackdropLabel${cod_romaneio}`} aria-hidden="true">
@@ -116,83 +107,12 @@ export const RomaneioCanvaObj = ({ cod_romaneio }) => {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div id={`response-${cod_romaneio}`}></div>
-                    <div id={`romaneio_container_${cod_romaneio}`} style={{position: 'relative', top: 0, left: 0, width: '1504.5px', maxWidth: '1504.5px', border: '1px solid #c2c2c216'}}>
-                        {
-                            romaneio && (
-                                <>
-                                    <img src={image_molde} alt="" />
-
-                                    <div class="bloco romaneio">
-                                        <span>{romaneio.cod_romaneio}</span>
-                                    </div>
-
-                                    <div class="bloco op_lote">
-                                        <span>{Number(romaneio.cod_ordem)}/{romaneio.cod_lote}</span>
-                                    </div>
-                                    <div class="bloco barcode" ref={divBarcode}>
-                                        <svg id="code_barras"></svg>
-                                    </div>
-                                    <div class="bloco cliente">
-                                        <span>{romaneio.nome_cliente}</span>
-                                    </div>
-                                    <div class="bloco itemsr">
-                                        <span>{romaneio.item_sr}</span>
-                                    </div>
-                                    <div class="bloco item_cliente">
-                                        <span>{romaneio.item_cliente}</span>
-                                    </div>
-
-                                    <div class="bloco cidade">
-                                        <span>{romaneio.nome_cidade}</span>
-                                    </div>
-
-                                    <div class="bloco peso_bruto">
-                                        <span>{romaneio.peso_bruto}</span>
-                                    </div>
-
-                                    <div class="bloco peso_liquido">
-                                        <span>{romaneio.peso_liquido}</span>
-                                    </div>
-
-                                    <div class="bloco peso_tubete">
-                                        <span>{romaneio.peso_tubete}</span>
-                                    </div>
-
-                                    <div class="bloco quantidade">
-                                        <span>{romaneio.peso_liquido} KG</span>
-                                    </div>
-
-                                    <div class="bloco endereco">
-                                        <span>{romaneio.endereco}</span>
-                                    </div>
-
-                                    <div class="bloco qtd_vol">
-                                        <span>{romaneio.qtd_volume}</span>
-                                    </div>
-
-                                    <div class="bloco data_prod">
-                                        <span>{formatarData(romaneio.data_producao)}</span>
-                                    </div>
-                                    
-                                    <div class="bloco op_lote2">
-                                        <span>{Number(romaneio.cod_ordem)}/{romaneio.cod_lote}</span>
-                                    </div>
-
-                                    <BarcodeGS1 data={romaneio} />
-
-
-                                    {
-                                        romaneio && createBarcode()
-                                    }
-                                </>
-                            )
-                        }       
-                        </div>
+                    <div id={`response-${cod_romaneio}`}></div>                    
+                    <Romaneio romaneio={romaneio} image_molde={image_molde} />                        
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" onClick={generatePDF}>Baixar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style={{ marginRight: '1%' }}>Fechar</button>
+                    <button type="button" class="btn btn-primary" onClick={generatePDF} style={{ marginRight: '3%' }}>Baixar</button>
                 </div>
                 </div>
             </div>
