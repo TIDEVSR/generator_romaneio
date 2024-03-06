@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Romaneio Online",
+  "name": "Gerador de Romaneios",
   "icons": [
     {
       "src": "favicon.ico",

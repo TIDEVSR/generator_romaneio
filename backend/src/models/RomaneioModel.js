@@ -13,7 +13,13 @@ class Romaneio {
           cod_ordem: Number(params.ordem),
         },
         attributes: [
-          'data_registro', 'cod_romaneio', 'cod_ordem', 'cod_lote', 'nome_cliente', 'nome_cidade', 'item_sr', 'item_cliente', 'peso_bruto', 'peso_liquido', 'peso_tubete', 'endereco', 'qtd_volume', 'data_producao', 'peso_palete'
+          'data_registro', 'cod_romaneio', 'cod_ordem', 
+          'cod_lote', 'nome_cliente', 'nome_cidade', 
+          'item_sr', 'item_cliente', 'peso_bruto', 
+          'peso_liquido', 'peso_tubete', 'endereco', 
+          'qtd_volume', 'data_producao', 'peso_palete',
+          'cod_material', 'cod_ov', 'referencia_cliente',
+          'cod_cliente', 'cnpj_cliente'
         ]
       });
     }
@@ -23,7 +29,13 @@ class Romaneio {
           cod_romaneio: Number(params.romaneio),
         },
         attributes: [
-          'data_registro', 'cod_romaneio', 'cod_ordem', 'cod_lote', 'nome_cliente', 'nome_cidade', 'item_sr', 'item_cliente', 'peso_bruto', 'peso_liquido', 'peso_tubete', 'endereco', 'qtd_volume', 'data_producao', 'peso_palete'
+          'data_registro', 'cod_romaneio', 'cod_ordem', 
+          'cod_lote', 'nome_cliente', 'nome_cidade', 
+          'item_sr', 'item_cliente', 'peso_bruto', 
+          'peso_liquido', 'peso_tubete', 'endereco', 
+          'qtd_volume', 'data_producao', 'peso_palete',
+          'cod_material', 'cod_ov', 'referencia_cliente',
+          'cod_cliente', 'cnpj_cliente'
         ]
       });
     }
