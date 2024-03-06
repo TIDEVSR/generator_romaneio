@@ -16,7 +16,7 @@ export const App = () => {
     const findRomaneio = async (ordem) => {
         setLoading(true);
         try {
-            const resp = await Api.get(`http://localhost:8080/romaneio/?ordem=${ordem}`);
+            const resp = await Api.get(`/romaneio/?ordem=${ordem}`);
             console.log(resp)
             setRomaneios(resp.data);
         }
@@ -28,7 +28,12 @@ export const App = () => {
         }
     }
 
+    const handleKeyDown = (e) => {
+        if(e.code === "Enter") handleClick();
+    }
+
     const handleClick = () => {
+        setRomaneios(null);
         findRomaneio(op);
     }
 
@@ -39,11 +44,27 @@ export const App = () => {
         <div className="mt-4"></div>
 
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Digite o número da ordem" aria-label="Digite o número da ordem" aria-describedby="button-addon2" value={op} onChange={(e) => setOP(e.target.value)} />
+            <input type="text" class="form-control" onKeyDown={handleKeyDown} placeholder="Digite o número da ordem" aria-label="Digite o número da ordem" aria-describedby="button-addon2" value={op} onChange={(e) => setOP(e.target.value)} />
             <button class="btn btn-outline-secondary" type="button" id="button-addon2" onClick={handleClick}>Procurar</button>
         </div>
 
         <div className="mb-4"></div>
+
+        {
+            loading && (
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0 30%' }}>
+                    <div class="spinner-grow text-dark" style={{ width: '3rem', height: '3rem' }} role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-dark" style={{ width: '3rem', height: '3rem' }} role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-dark" style={{ width: '3rem', height: '3rem' }} role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            )
+        }
 
         {
             romaneios && (

@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { formatarData } from "../../utils/formataData";
 import { RomaneioCanvaObj } from "../RomaneioCanvaObj";
 
+import html2canvas from "html2canvas";
+
 export const TableItem = ({data}) => {    
     const { cod_romaneio, nome_cliente, item_cliente, data_registro } = data;
 
